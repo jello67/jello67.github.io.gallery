@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Photo Gallery</title>
 <style>
   body {
+    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/034/439/911/small_2x/empty-modern-interior-wall-background-front-view-ai-generated-free-photo.jpg");
     font-family: Arial, sans-serif;
+    text-align: center;
     margin: 0;
     padding: 20px;
   }
@@ -29,8 +28,8 @@
   }
 
   .modal {
+    transform: scale(1.5);
     display: none; 
-    position: fixed;
     padding-top: 60px;
     left: 0;
     top: 0;
@@ -41,8 +40,8 @@
   .modal-content {
     margin: auto;
     display: block;
-    max-width: 90%;
-    max-height: 80%;
+    max-width: 100%;
+    max-height: auto;
   }
   .close {
     position: absolute;
@@ -63,9 +62,6 @@
 <h2>Photo Gallery</h2>
 
 <div class="gallery">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR10ZCLucrppMcrE20IIoJXpx1MKxJoZORyIQ&s" alt="Photo 1" />
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx7u9k5Ovk9oO4D3OavqfYsuPwzCTQrWRTFQ&s" alt="Photo 2" />
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsdxOZICgqr8p1u4NcvtllZxLD1jRpNaSGIQ&s" alt="Photo 3" />
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNN_oFGr9R12KIZhyJ6AzZWr63pRy8xr630w&s" alt="Photo 4" />
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzc-1yUYEybYZ64pOB-IUn3ujVuzjb9-VJlA&s" alt="Photo 5" />
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhN90zFtOIZcOj6I29HGaI4unimAOKJy-zXw&s" alt="Photo 6" />
