@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Photo Gallery</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+  }
+
+  .gallery img {
+    width: 100%;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: transform 0.2s;
+  }
+
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+
+  .modal {
+    display: none; 
+    position: fixed;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+  }
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+  }
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .modal-content {
+    transition: transform 0.2s;
+  }
+</style>
+</head>
+<body>
+
+<h2>Photo Gallery</h2>
+
+<div class="gallery">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR10ZCLucrppMcrE20IIoJXpx1MKxJoZORyIQ&s" alt="Photo 1" />
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx7u9k5Ovk9oO4D3OavqfYsuPwzCTQrWRTFQ&s" alt="Photo 2" />
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsdxOZICgqr8p1u4NcvtllZxLD1jRpNaSGIQ&s" alt="Photo 3" />
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNN_oFGr9R12KIZhyJ6AzZWr63pRy8xr630w&s" alt="Photo 4" />
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzc-1yUYEybYZ64pOB-IUn3ujVuzjb9-VJlA&s" alt="Photo 5" />
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhN90zFtOIZcOj6I29HGaI4unimAOKJy-zXw&s" alt="Photo 6" />
+</div>
+
+
+<div id="myModal" class="modal">
+  <span class="close"></span>
+  <img class="modal-content" id="expandedImg" src="" alt="Expanded Photo" />
+</div>
+
+<script>
+  const modal = document.getElementById("myModal");
+  const modalImg = document.getElementById("expandedImg");
+  const closeBtn = document.getElementsByClassName("close")[0];
+
+  document.querySelectorAll('.gallery img').forEach(img => {
+    img.onclick = () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+    }
+  });
+
+  closeBtn.onclick = () => {
+    modal.style.display = "none";
+  };
+  
+  window.onclick = (event) => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
+
+</body>
+</html>
